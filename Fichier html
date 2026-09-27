@@ -1,0 +1,34 @@
+Contexte :
+J'ai une page HTML autonome (fichier unique, HTML/CSS/JS vanilla, pas de framework)
+qui simule des réglages photo pour reflex débutant. Fichier : simulateur-reglages-photo.html
+
+Champs actuels : sujet, distance, luminosité, sujet mobile ou non, style recherché.
+La fonction calculer() en JS calcule : mode, ouverture, vitesse, ISO, et un conseil,
+puis affiche le résultat dans un tableau.
+
+Demande :
+Ajouter un champ "Objectif" (select) avec ces options :
+- 18-55mm f/3.5-5.6 (kit standard)
+- 55-200mm f/4-5.6 (téléobjectif zoom)
+- 50mm f/1.8 (fixe standard)
+- 100mm f/2.8 (fixe macro)
+- 10-18mm f/4.5-5.6 (grand angle)
+
+Pour chaque objectif, définir : ouverture minimale (f/ le plus petit chiffre) et
+ouverture maximale (f/ le plus grand chiffre), et la plage focale.
+
+Modifier la logique de calculer() pour :
+1. Si l'ouverture recommandée par le style/sujet est plus petite (ex: f/1.8) que ce que
+   l'objectif permet (ex: 18-55 ne descend qu'à f/3.5), afficher l'ouverture max réelle
+   de l'objectif à la place, et ajouter un avertissement du type :
+   "Cet objectif ne permet pas une ouverture aussi grande, effet bokeh limité."
+2. Si le sujet est "macro" et l'objectif n'est pas le 100mm macro, avertir que la mise
+   au point rapprochée sera limitée.
+3. Si le sujet est "sport" ou "animal" avec distance "loin" et que l'objectif choisi est
+   le 18-55 ou le 50mm fixe, suggérer le 55-200 pour plus de portée.
+4. Garder le style de code, le CSS et la mise en page existants (thème clair/sombre via
+   variables CSS, tableau de résultats, conseil contextuel). Ne rien casser dans les
+   champs déjà présents.
+
+Contrainte technique : fichier HTML unique, sans dépendance externe, compatible mobile.
+Tu peux ajuster les modèles d'objectifs listés selon ton propre matériel avant de l'envoyer.
