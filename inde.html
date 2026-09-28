@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Simulateur de réglages photo</title>
+<style>
+:root{
+  --bg:#fdfaf5; --card:#ffffff; --text:#2b2620; --muted:#6b6255;
+  --accent:#b5551f; --accent2:#3a6b5c; --border:#e6ddd0;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1c1a17; --card:#26231f; --text:#eee7db; --muted:#a89e8e;
+    --accent:#e08a4f; --accent2:#6fbfa6; --border:#3a352d;
+  }
+}
+:root[data-theme="dark"]{--bg:#1c1a17;--card:#26231f;--text:#eee7db;--muted:#a89e8e;--accent:#e08a4f;--accent2:#6fbfa6;--border:#3a352d;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.5;}
+.wrap{max-width:640px;margin:0 auto;padding:1.6rem 1.1rem 3rem;}
+h1{font-size:1.5rem;margin-bottom:.1rem;}
+.sub{color:var(--muted);margin-top:0;font-style:italic;font-size:.95rem;}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:1.1rem 1.2rem;margin:1rem 0;}
+label{display:block;font-family:Arial,sans-serif;font-size:.85rem;color:var(--muted);margin:.7rem 0 .25rem;}
+select{width:100%;padding:.55rem;border-radius:7px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:.95rem;font-family:Arial,sans-serif;}
+button{margin-top:1.1rem;width:100%;padding:.75rem;border:none;border-radius:8px;background:var(--accent);color:#fff;font-size:1rem;font-family:Arial,sans-serif;font-weight:bold;cursor:pointer;}
